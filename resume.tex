@@ -1,0 +1,86 @@
+\documentclass[10pt, a4paper, colorlinks=true]{moderncv}
+\usepackage[utf8]{inputenc}
+\moderncvtheme[black]{classic}
+
+\firstname{Sam}
+\familyname{Schlesinger}
+\mobile{+1~(508)~246~8980}
+\email{sgschlesinger@gmail.com}
+\homepage{SamuelSchlesinger.github.io}
+
+\begin{document}
+
+\makecvtitle
+
+\section{Education}
+
+\cventry{2019}{B.A. Computer Science and Math}{UMass}{Amherst}{}{}
+
+\section{Professional Experience}
+\noindent\fbox{%
+    \parbox{\textwidth}{%
+    Rust,
+    Haskell,
+    TypeScript/JavaScript,
+    Cryptography,
+    Distributed Systems,
+    Web Servers,
+    Internet Standards,
+    Security,
+    PostgreSQL,
+    Kubernetes,
+    Smart Contracts
+    }%
+}
+
+
+\cventry{2022-now}{Senior Software Engineer}{Google}{Remote}{}
+{
+    \begin{itemize}
+        \item Lead a team developing anonymous credentials protocols for the web using zero-knowledge proofs, with implementation in Rust.
+        \item Published open source anonymous credentials implementations in the
+            \href{https://github.com/samuelSchlesinger/authenticated-pseudonyms/}{authenticated-pseudonyms}
+            and \href{https://github.com/SamuelSchlesinger/anonymous-credit-tokens}{anonymous-credit-tokens} libraries.
+        \item Reviewed web proposals for privacy and defensibility properties.
+        \item Designed the
+            \href{https://explainers-by-googlers.github.io/private-proof/}{Private Proof API}
+            as a solution for anti-fraud providers in a web without third party cookies,
+            leading a group of three web platform engineers to implement it in Chrome.
+        \item Active in the W3C 
+            \begin{itemize}
+                \item Chair of the Anti-Fraud Community Group
+                \item Federated Identity Working Group
+                \item Security Interest Group
+                \item Verifiable Credentials Working Group
+            \end{itemize}
+        \item Active in IETF
+            \begin{itemize}
+                \item Privacy Pass Working Group
+                \item Crypto Forum
+            \end{itemize}
+    \end{itemize}
+}
+
+\cventry{2022}{Software Engineer / Scientist}{Casper Labs}{Remote}{}
+{
+    \begin{itemize}
+        \item Co-designed a novel consensus algorithm: \href{https://arxiv.org/abs/2205.06314}{preprint}. This work was presented at FOCODILE 2022.
+        \item Implemented this consensus algorithm in the \href{https://github.com/casper-network/casper-node}{Casper reference node}. The algorithm was recently deployed as a part of the 2.0 upgrade.
+        \item Conducted research on zero-knowledge use cases in the Casper ecosystem.
+            Proposed changes to optimize the network for zero-knowledge use cases.
+        \item As part of the research team, consulted for the C-suite on strategy for the network's design
+            from a security and scalability perspective.
+    \end{itemize}
+}
+
+\cventry{2019-2022}{Software Engineer (Team Lead)}{SimSpace}{Boston/Remote}{}
+{
+    \begin{itemize}
+        \item Designed and implemented Attack Designer program.
+        \item Designed consensus-lite protocol for multiple data-center clusters to coordinate across
+            each other.
+        \item As backend security lead, found and mitigated several incorrect cryptographic applications.
+    \end{itemize}
+}
+
+\end{document}
