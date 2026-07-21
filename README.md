@@ -29,3 +29,9 @@ Enable the versioned git hooks (rebuilds and stages `resume.pdf` whenever
 ```sh
 make hooks
 ```
+
+## License
+
+The LaTeX source and formatting are [MIT-licensed](LICENSE). The personal
+content — the text of the resume itself — is not licensed for reuse; swap in
+your own.
