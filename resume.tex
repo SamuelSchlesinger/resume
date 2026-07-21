@@ -1,7 +1,11 @@
-\documentclass[10pt, letterpaper, colorlinks=true]{moderncv}
+\documentclass[11pt, letterpaper, colorlinks=true]{moderncv}
 \usepackage[utf8]{inputenc}
 \moderncvtheme[black]{classic}
 \usepackage[scale=0.85]{geometry}
+\definecolor{linkblue}{HTML}{245B78}
+\AtBeginDocument{\hypersetup{urlcolor=linkblue,linkcolor=linkblue}}
+\renewcommand*{\namefont}{\fontsize{30}{32}\mdseries\upshape}
+\linespread{1.035}
 
 \firstname{Sam}
 \familyname{Schlesinger}
@@ -13,13 +17,7 @@
 \begin{document}
 
 \makecvtitle
-
-\section{Education}
-
-\cventry{2019}{B.A. Computer Science and Math}{UMass}{Amherst}{}{}
-
-\section{Skills}
-\cvitem{}{Cryptography, Security, Distributed Systems, Rust, Haskell, TypeScript/JavaScript, Internet Standards, Web Servers, PostgreSQL, Kubernetes, Smart Contracts}
+\vspace{-1em}
 
 \section{Professional Experience}
 
@@ -56,8 +54,15 @@
 
 \section{Community \& Outreach}
 
-\cvitem{Creator}{\href{https://www.youtube.com/@computablesecrets}{Computable Secrets}, a YouTube channel explaining cryptography, formal methods, and theoretical computer science.}
+\cvitem{Creator}{\href{https://www.youtube.com/@computablesecrets}{Computable Secrets}, a YouTube channel explaining cryptography, formal methods, and \mbox{theoretical} computer science.}
 \cvitem{Reviewer}{\href{https://www.cslib.io/}{CSLib}, reviewing formalized computer science contributions to its Lean library.}
 \cvitem{Instructor}{Delivered tailored computer science lectures at local high schools and taught \href{https://codenext.withgoogle.com/}{Google Code Next} classes to high school students.}
+
+\section{Skills}
+\cvitem{Core}{Cryptography, Security, Distributed Systems, Internet Standards}
+\cvitem{Engineering}{Rust, Haskell, TypeScript/JavaScript, Web Servers, PostgreSQL, Kubernetes, Smart Contracts}
+
+\section{Education}
+\cventry{2019}{B.A. Computer Science and Math}{UMass}{Amherst}{}{}
 
 \end{document}
