@@ -1,7 +1,10 @@
 # Resume
 
+[![Build](https://github.com/SamuelSchlesinger/resume/actions/workflows/build.yml/badge.svg)](https://github.com/SamuelSchlesinger/resume/actions/workflows/build.yml)
+
 LaTeX source for my resume. The compiled [resume.pdf](resume.pdf) is checked in
-and kept in sync with `resume.tex` by a pre-commit hook.
+and kept in sync with `resume.tex` by a pre-commit hook. If you like the
+format, feel free to fork this repo and swap in your own content.
 
 ## Building
 
@@ -13,6 +16,10 @@ make watch      # rebuild on changes
 make clean      # remove intermediate build files
 make distclean  # remove all generated files, including the PDF
 ```
+
+Every push is also built by [GitHub Actions](.github/workflows/build.yml),
+which compiles the resume in a clean TeX Live container and uploads the PDF
+as an artifact.
 
 ## Setup after cloning
 
