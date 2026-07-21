@@ -1,0 +1,13 @@
+#!/bin/sh
+# Keep the committed resume.pdf in sync with resume.tex: whenever resume.tex
+# is part of a commit, rebuild the PDF and stage it alongside.
+set -e
+
+if git diff --cached --quiet -- resume.tex; then
+    exit 0
+fi
+
+echo "pre-commit: resume.tex changed, rebuilding resume.pdf..."
+make resume.pdf >/dev/null
+git add resume.pdf
+echo "pre-commit: resume.pdf rebuilt and staged."
