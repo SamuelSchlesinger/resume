@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  22 JUL 2026 00:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.8)  22 JUL 2026 00:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -886,11 +886,11 @@ Package rerunfilecheck Info: File `resume.out' has not changed.
 (rerunfilecheck)             Checksum: DF2A7762CCA16303394EAAB0B0A5081F;474.
  ) 
 Here is how much of TeX's memory you used:
- 26325 strings out of 473190
- 505497 string characters out of 5715801
+ 26327 strings out of 473190
+ 505517 string characters out of 5715801
  929432 words of memory out of 5000000
  49096 multiletter control sequences out of 15000+600000
- 571715 words of font info for 91 fonts, out of 8000000 for 9000
+ 571773 words of font info for 92 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  129i,13n,129p,1003b,466s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/fontawesome5/FontAweso
@@ -904,10 +904,10 @@ f-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2025/texmf-
 dist/fonts/type1/public/cm-super/sfrm2986.pfb></usr/local/texlive/2025/texmf-di
 st/fonts/type1/public/cm-super/sfsl1000.pfb></usr/local/texlive/2025/texmf-dist
 /fonts/type1/public/cm-super/sfsl1095.pfb>
-Output written on resume.pdf (1 page, 189142 bytes).
+Output written on resume.pdf (1 page, 189385 bytes).
 PDF statistics:
- 111 PDF objects out of 1000 (max. 8388607)
- 85 compressed objects within 1 object stream
+ 112 PDF objects out of 1000 (max. 8388607)
+ 86 compressed objects within 1 object stream
  6 named destinations out of 1000 (max. 500000)
  28717 words of extra memory for PDF output out of 29859 (max. 10000000)
 
