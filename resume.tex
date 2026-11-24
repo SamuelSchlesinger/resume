@@ -1,69 +1,153 @@
-\documentclass[11pt, letterpaper, colorlinks=true]{moderncv}
+\documentclass[10pt, letterpaper]{article}
+
+% ---------------------------------------------------------------- packages
+\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\moderncvtheme[black]{classic}
-\renewcommand*{\labelitemi}{\strut\textcolor{color1}{\tiny\faCircle}}
-\usepackage[scale=0.85]{geometry}
-\definecolor{linkblue}{HTML}{247BA0}
-\AtBeginDocument{\hypersetup{urlcolor=linkblue,linkcolor=linkblue}}
-\renewcommand*{\namefont}{\fontsize{30}{32}\mdseries\upshape}
-\linespread{1.035}
+\usepackage{libertinus}
+\usepackage{libertinust1math}
+\usepackage[letterpaper, top=0.45in, bottom=0.4in, left=0.6in, right=0.6in]{geometry}
+\usepackage[protrusion=true, expansion=true, tracking=true]{microtype}
+\usepackage{xcolor}
+\usepackage{fontawesome5}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage[hidelinks]{hyperref}
 
-\firstname{Sam}
-\familyname{Schlesinger}
-\mobile{+1~(508)~246~8980}
-\email{sgschlesinger@gmail.com}
-\homepage{SamuelSchlesinger.github.io}
-\social[github]{SamuelSchlesinger}
+% ---------------------------------------------------------------- palette
+\definecolor{ink}{HTML}{1F2328}
+\definecolor{muted}{HTML}{5C6670}
+\definecolor{accent}{HTML}{1F6F9F}
+\definecolor{rule}{HTML}{C9D3DC}
+\color{ink}
 
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent,
+  pdftitle={Sam Schlesinger -- Resume}, pdfauthor={Sam Schlesinger}}
+
+% ---------------------------------------------------------------- layout
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1.02}
+\setlength{\tabcolsep}{0pt}
+
+% Section headings: letterspaced small caps over a hairline rule
+\titleformat{\section}
+  {\color{accent}\large\scshape}
+  {}{0pt}
+  {\textls[120]}
+  [\vspace{0.05em}{\color{rule}\titlerule[0.6pt]}]
+\titlespacing*{\section}{0pt}{0.85em}{0.4em}
+
+% Bullets: small accent squares, tight spacing
+\setlist[itemize]{leftmargin=1.15em, labelsep=0.5em, topsep=0.2em,
+  itemsep=0.12em, parsep=0pt, partopsep=0pt,
+  label={\raisebox{0.28ex}{\color{accent}\rule{0.3em}{0.3em}}}}
+
+% \entry{Organization}{Dates}{Role}{Location}
+\newcommand{\entry}[4]{%
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{#1} & {\color{muted}\small #2} \\
+    \textit{#3} & {\color{muted}\small #4} \\
+  \end{tabularx}\par\vspace{-0.15em}}
+
+% \role{Title}{Dates}{Description}: one compact paragraph, date at right
+\newcommand{\role}[3]{%
+  \begin{tabularx}{\linewidth}{@{}X@{\hspace{1.5em}}r@{}}
+    \textbf{#1}\,\,\textendash\,\,#3 & {\color{muted}\small #2} \\
+  \end{tabularx}\par\vspace{0.35em}}
+
+% Small italic sub-heading inside a long entry
+\newcommand{\theme}[1]{\par\vspace{0.3em}{\color{muted}\small\itshape #1}\par\vspace{-0.05em}}
+
+\newcommand{\sep}{\hspace{0.7em}{\color{rule}|}\hspace{0.7em}}
+
+% ================================================================ document
 \begin{document}
 
-\makecvtitle
-\vspace{-1em}
+% ---------------------------------------------------------------- header
+\begin{center}
+  {\fontsize{26}{28}\selectfont\textls[60]{\textsc{Sam Schlesinger}}}\par
+  \vspace{0.35em}
+  {\color{muted}\small Cryptography\,\textperiodcentered\,Privacy-Preserving Protocols\,\textperiodcentered\,Internet Standards\,\textperiodcentered\,Formal Verification}\par
+  \vspace{0.45em}
+  {\small
+    \faPhone*\,\,+1~(508)~246~8980\sep
+    \faEnvelope[regular]\,\,\href{mailto:sgschlesinger@gmail.com}{sgschlesinger@gmail.com}\sep
+    \faGlobe\,\,\href{https://SamuelSchlesinger.github.io}{SamuelSchlesinger.github.io}\sep
+    \faGithub\,\,\href{https://github.com/SamuelSchlesinger}{SamuelSchlesinger}}
+\end{center}
+\vspace{-0.6em}
 
-\section{Professional Experience}
+% ---------------------------------------------------------------- experience
+\section{Experience}
 
-\cventry{2022--Present}{Senior Software Engineer}{Google Chrome AI Security}{}{}
-{
-    \begin{itemize}
-        \item Designed and implemented a privacy-preserving banking protocol for \href{https://cloud.google.com/application/web3/universal-ledger}{Google Cloud Universal Ledger}.
-        \item Co-authored the \href{https://github.com/cathieyun/draft-athm}{Anonymous Tokens with Hidden Metadata standards drafts} and \href{https://github.com/google/anonymous-tokens}{Rust implementation}; deployed to protect billions of users from spam texts via RCS/iMessage integration.
-        \item Designed and implemented the \href{https://github.com/explainers-by-googlers/private-verification-tokens}{Private Verification Tokens API} in Chromium using ATHM to transfer low-entropy trust from regular to private browsing, reducing CAPTCHA friction while preserving privacy.
-        \item Co-authored the \href{https://github.com/SamuelSchlesinger/draft-act}{Anonymous Credit Tokens (ACT) standards drafts} and \href{https://github.com/SamuelSchlesinger/anonymous-credit-tokens}{Rust implementation} for privacy-preserving API credits; presented ACT to the IETF Privacy Pass Working Group at IETF 123, IETF 124, and its May 2026 interim.
-        \item Led a three-day cross-browser PACT workshop producing three \href{https://github.com/Moderation-of-unLinkable-Endorsements/internet-drafts}{Moderation of unLinkable Endorsements (MoLE) Internet-Drafts}; built an end-to-end Chromium prototype; presented at IETF 126.
-        \item Designed the \href{https://explainers-by-googlers.github.io/private-proof/}{Private Proof API} for anti-fraud in a post-third-party-cookie web. Led three engineers to implement in Chrome. Drafted novel \href{https://github.com/samuelSchlesinger/authenticated-pseudonyms/}{anonymous credential primitives}.
-        \item Co-chair of W3C Anti-Fraud Community Group.
-    \end{itemize}
-}
+\entry{Google}{2022 -- Present}{Senior Software Engineer, Chrome AI Security}{}
+\theme{Privacy-preserving cryptography}
+\begin{itemize}
+  \item Designed and implemented a privacy-preserving banking protocol for \href{https://cloud.google.com/application/web3/universal-ledger}{Google Cloud Universal Ledger}.
+  \item Co-authored the \href{https://github.com/cathieyun/draft-athm}{Anonymous Tokens with Hidden Metadata (ATHM) drafts} and \href{https://github.com/google/anonymous-tokens}{Rust implementation}; deployed to protect billions of users from spam texts via RCS/iMessage integration.
+  \item Designed and implemented the \href{https://github.com/explainers-by-googlers/private-verification-tokens}{Private Verification Tokens API} in Chromium, using ATHM to carry low-entropy trust from regular to private browsing and reduce CAPTCHA friction without tracking.
+  \item Designed the \href{https://explainers-by-googlers.github.io/private-proof/}{Private Proof API} for anti-fraud on a web without third-party cookies; led three engineers to implement it in Chrome and drafted novel \href{https://github.com/samuelSchlesinger/authenticated-pseudonyms/}{anonymous credential primitives}.
+\end{itemize}
+\theme{Internet standards}
+\begin{itemize}
+  \item Co-authored the \href{https://github.com/SamuelSchlesinger/draft-act}{Anonymous Credit Tokens (ACT) drafts} and \href{https://github.com/SamuelSchlesinger/anonymous-credit-tokens}{Rust implementation} for privacy-preserving API credits, now carried into MoLE as \href{https://moderation-of-unlinkable-endorsements.github.io/internet-drafts/draft-schlesinger-mole-ec-act.html}{EC-ACT} and post-quantum \href{https://moderation-of-unlinkable-endorsements.github.io/internet-drafts/draft-authors-mole-vole-act.html}{VOLE-ACT}; presented ACT to the IETF Privacy Pass WG at IETF 123, IETF 124, and its May 2026 interim.
+  \item Led a three-day cross-browser PACT workshop that launched \href{https://github.com/Moderation-of-unLinkable-Endorsements}{Moderation of unLinkable Endorsements (MoLE)}; co-authored six of its seven \href{https://github.com/Moderation-of-unLinkable-Endorsements/internet-drafts}{Internet-Drafts} (\href{https://moderation-of-unlinkable-endorsements.github.io/internet-drafts/draft-jms-mole-architecture.html}{architecture}, \href{https://moderation-of-unlinkable-endorsements.github.io/internet-drafts/draft-jms-mole-protocols.html}{protocols}, \href{https://moderation-of-unlinkable-endorsements.github.io/internet-drafts/draft-jms-mole-http-transport.html}{HTTP transport}, \href{https://moderation-of-unlinkable-endorsements.github.io/internet-drafts/draft-ladd-mole-ec-ihat.html}{EC-IHAT}, EC-ACT, VOLE-ACT) and the \href{https://github.com/Moderation-of-unLinkable-Endorsements/mole-p256-rs}{P-256 Rust implementations}; built an end-to-end Chromium prototype; presented at IETF 126 and co-presented the architecture at the \href{https://youtu.be/LLEFuf5hscc}{IETF 127 BoF}, which drew strong support for a working group.
+\end{itemize}
+\theme{Formal verification}
+\begin{itemize}
+  \item Co-authored \href{https://github.com/google-deepmind/code-verification}{\textit{AlphaProof Code: Verifying Signal's Security at the Machine-Code Level}} with Google DeepMind: kernel-checked Lean proofs of symbolic and computational security for \texttt{libsignal}'s compiled AArch64 binary; reviewed the computational model.
+\end{itemize}
 
-\cventry{2022}{Software Engineer / Scientist}{Casper Labs}{}{}
-{
-    \begin{itemize}
-        \item Co-designed novel \href{https://arxiv.org/abs/2205.06314}{consensus algorithm} (presented at FOCODILE 2022). Implemented in \href{https://github.com/casper-network/casper-node}{Casper node}, deployed in 2.0 upgrade.
-        \item Researched zero-knowledge use cases and proposed network optimizations.
-        \item Consulted C-suite on network security and scalability strategy.
-    \end{itemize}
-}
+\vspace{0.35em}
+\entry{Casper Labs}{2022}{Software Engineer / Scientist}{}
+\begin{itemize}
+  \item Co-designed a novel \href{https://arxiv.org/abs/2205.06314}{consensus algorithm} (FOCODILE 2022); implemented it in the \href{https://github.com/casper-network/casper-node}{Casper node}, shipped in the 2.0 upgrade.
+  \item Researched zero-knowledge applications and network optimizations; advised the C-suite on security and scalability.
+\end{itemize}
 
-\cventry{2019--2022}{Software Engineer (Team Lead)}{SimSpace}{}{}
-{
-    \begin{itemize}
-        \item Designed and implemented Attack Designer program.
-        \item Designed consensus-lite protocol for multi-datacenter cluster coordination.
-        \item Backend security lead: identified and fixed cryptographic vulnerabilities.
-    \end{itemize}
-}
+\vspace{0.35em}
+\entry{SimSpace}{2019 -- 2022}{Software Engineer (Team Lead)}{}
+\begin{itemize}
+  \item Designed and implemented the Attack Designer program.
+  \item Designed a consensus-lite protocol for multi-datacenter cluster coordination.
+  \item Backend security lead: identified and fixed cryptographic vulnerabilities.
+\end{itemize}
 
+% ---------------------------------------------------------------- leadership
+\section{Standards \& Open-Source Leadership}
+
+\role{Co-Chair, \href{https://www.w3.org/community/antifraud/}{W3C Anti-Fraud Community Group}}{2025 -- Present}
+  {incubating privacy-preserving anti-fraud APIs for the web.}
+
+\role{Chartering an IETF MoLE Working Group}{2026 -- Present}
+  {with Mozilla and Cloudflare; charter in progress post-BoF.}
+
+\role{Area Maintainer \& Code Owner, \href{https://www.cslib.io/}{CSLib}}{2026 -- Present}
+  {complexity, cryptography, and learning theory.}
+
+\role{Founder \& Maintainer, \href{https://github.com/cslib-community/cslib-frontier}{cslib-frontier}}{2026 -- Present}
+  {CSLib's frontier formalization library; grew it in six weeks to 3M lines of Lean and 110{,}000+ theorems across algorithms, complexity, and cryptography, with 28 contributors and AI-assisted development under independent review.}
+
+% ---------------------------------------------------------------- community
 \section{Community \& Outreach}
+\begin{itemize}
+  \item \textbf{Creator, \href{https://www.youtube.com/@computablesecrets}{Computable Secrets}:} YouTube channel on cryptography, formal methods, and theoretical CS.
+  \item \textbf{Instructor:} computer science lectures at local high schools; taught \href{https://codenext.withgoogle.com/}{Google Code Next} classes.
+\end{itemize}
 
-\cvitem{Creator}{\href{https://www.youtube.com/@computablesecrets}{Computable Secrets}, a YouTube channel explaining cryptography, formal methods, and \mbox{theoretical} computer science.}
-\cvitem{Reviewer}{\href{https://www.cslib.io/}{CSLib}, reviewing formalized computer science contributions to its Lean library.}
-\cvitem{Instructor}{Delivered tailored computer science lectures at local high schools and taught \href{https://codenext.withgoogle.com/}{Google Code Next} classes to high school students.}
-
+% ---------------------------------------------------------------- skills
 \section{Skills}
-\cvitem{Core}{Cryptography, Security, Distributed Systems, Internet Standards}
-\cvitem{Engineering}{Rust, Haskell, TypeScript/JavaScript, Web Servers, PostgreSQL, Kubernetes, Smart Contracts}
+{\small
+\begin{tabularx}{\linewidth}{@{}l@{\hspace{1.2em}}X@{}}
+  \textbf{Languages \& Tools} & Rust, Lean 4, Haskell, TypeScript/JavaScript, Web Servers, PostgreSQL, Kubernetes, Smart Contracts \\
+\end{tabularx}}
 
+% ---------------------------------------------------------------- education
 \section{Education}
-\cventry{2019}{B.A. Computer Science and Math}{UMass}{Amherst}{}{}
+\begin{tabularx}{\linewidth}{@{}X r@{}}
+  \textbf{University of Massachusetts Amherst}\,\,\textendash\,\,\textit{B.A., Computer Science and Mathematics} & {\color{muted}\small 2019} \\
+\end{tabularx}
 
 \end{document}
